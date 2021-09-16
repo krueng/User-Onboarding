@@ -81,11 +81,12 @@ function App() {
         submit={formSubmit}
         disabled={disabled}
         errors={formErrors}
+        key={users.id}
       />
       {
         users.map(user => {
           return (
-            <div className='container'>
+            <div className='container' key={user.id}>
               <h2>{user.name}</h2>
               <p>Email: {user.email}</p>
               <p>Password: ******* </p>

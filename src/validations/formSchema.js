@@ -9,6 +9,7 @@ const formSchema = yup.object().shape({
 
     email: yup
         .string()
+        .test('Taken?','That email is already taken.', value => value !== 'waffle@syrup.com')
         .email('Must be a valid email address!')
         .required('Email is required!'),
 
@@ -18,9 +19,9 @@ const formSchema = yup.object().shape({
         .required('Password is required!')
         .min(7, 'Password must be at least 7 characters long!'),
 
-        role: yup
+    role: yup
         .string()
-        .oneOf(['Student', 'Instructor', 'TA', 'Alumni'],'Please select a role!'),
+        .oneOf(['Student', 'Instructor', 'TA', 'Alumni'], 'Please select a role!'),
 
     tos: yup
         .boolean(true)
