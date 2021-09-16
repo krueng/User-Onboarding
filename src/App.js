@@ -65,7 +65,9 @@ function App() {
   }
 
   useEffect(() => {
-    formSchema.isValid(formValues).then(valid => setDisabled(!valid))
+    formSchema.isValid(formValues).then(valid => {
+      setDisabled(!valid)
+    })
   }, [formValues])
 
   return (
@@ -81,10 +83,10 @@ function App() {
         users.map(user => {
           return (
             <div className='container'>
-              <h2>{users.name}</h2>
-              <p>Email: {users.email}</p>
-              <p>Password: {users.password}</p>
-              <p>Tos: {users.tos}</p>
+              <h2>{user.name}</h2>
+              <p>Email: {user.email}</p>
+              <p>Password: ******* </p>
+              <p>Term: {user.tos ? 'agreed' : 'disagreed'}</p>
             </div>
           )
         })
