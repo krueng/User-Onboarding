@@ -9,12 +9,14 @@ const initialFormValues = {
   name: '',
   email: '',
   password: '',
+  role: '',
   tos: false
 }
 const initialFormErrors = {
   name: '',
   email: '',
   password: '',
+  role:'',
   tos: true
 }
 const initialUser = [];
@@ -59,6 +61,7 @@ function App() {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       password: formValues.password.trim(),
+      role: formValues.role.trim(),
       tos: formValues.tos
     }
     postNewUser(newUser)
@@ -86,6 +89,7 @@ function App() {
               <h2>{user.name}</h2>
               <p>Email: {user.email}</p>
               <p>Password: ******* </p>
+              <p>Role: {user.role} </p>
               <p>Term: {user.tos ? 'agreed' : 'disagreed'}</p>
             </div>
           )

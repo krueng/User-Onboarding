@@ -46,6 +46,15 @@ function Form(props) {
                             onChange={onChange}
                         />
                     </label>
+                    <label>Role;
+                        <select onChange={onChange} value={values.role} name='role'>
+                            <option value=''>--Select an option--</option>
+                            <option value='Student'>Student</option>
+                            <option value='Instructor'>Instructor</option>
+                            <option value='TA'>TA</option>
+                            <option value='Alumni'>Alumni</option>
+                        </select>
+                    </label>
                     <label>Term of Service
                         <input
                             type='checkbox'
@@ -59,6 +68,7 @@ function Form(props) {
                     <div>{errors.name}</div>
                     <div>{errors.email}</div>
                     <div>{errors.password}</div>
+                    <div>{errors.role}</div>
                     <div>{errors.tos}</div>
                 </div>
                 <div className='form-group submit'>
