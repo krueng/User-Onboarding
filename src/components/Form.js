@@ -72,7 +72,7 @@ function Form(props) {
                     <div>{errors.tos}</div>
                 </div>
                 <div className='form-group submit'>
-                    <button disabled={disabled}>submit</button>
+                    <button id='submitBtn' disabled={disabled}>submit</button>
                 </div>
             </div>
 
